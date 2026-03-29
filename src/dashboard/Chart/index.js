@@ -34,36 +34,32 @@ export function Chart({ data, title, dataKey = 'value' }) {
   const colors = chartColors[theme];
   
   return (
-    <ChartContainer>
+    <><Chart /><ChartContainer>
       <Title>{title}</Title>
       <ResponsiveContainer width="100%" height="85%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke={colors.grid} />
-          <XAxis 
-            dataKey="date" 
+          <XAxis
+            dataKey="date"
             stroke={colors.text}
-            tick={{ fill: colors.text }}
-          />
-          <YAxis 
+            tick={{ fill: colors.text }} />
+          <YAxis
             stroke={colors.text}
-            tick={{ fill: colors.text }}
-          />
-          <Tooltip 
+            tick={{ fill: colors.text }} />
+          <Tooltip
             contentStyle={{
               backgroundColor: 'var(--card-bg)',
               border: `1px solid var(--border)`,
               color: 'var(--text-primary)'
-            }}
-          />
-          <Line 
-            type="monotone" 
-            dataKey={dataKey} 
-            stroke={colors.stroke} 
+            }} />
+          <Line
+            type="monotone"
+            dataKey={dataKey}
+            stroke={colors.stroke}
             strokeWidth={2}
-            dot={false}
-          />
+            dot={false} />
         </LineChart>
       </ResponsiveContainer>
-    </ChartContainer>
+    </ChartContainer></>
   );
 }

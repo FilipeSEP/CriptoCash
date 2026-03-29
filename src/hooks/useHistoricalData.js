@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { cryptoApi } from '../services/api/cryptoApi';
-import { bcApi } from '../services/api/bcApi';
+import { cryptoApi } from '../Services/Api/cryptoApi';
+import { bcApi } from '../Services/Api/bcApi';
 
 export function useHistoricalData(mode, days = 7) {
   const [data, setData] = useState([]);

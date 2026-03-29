@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useMode } from '../../contexts/ModeContext';
+import { useMode } from '../../Contexts/ModeContext';
 import { usePrices } from '../../hooks/usePrices';
 import { useHistoricalData } from '../../hooks/useHistoricalData';
 import { PriceCard } from '../../components/dashboard/PriceCard';
@@ -116,7 +116,7 @@ export function Dashboard() {
 
   return (
     <>
-      <AnimatedBackground />
+      <Chart /><AnimatedBackground />
       <Container>
         <Hero>
           <HeroTitle>
@@ -170,3 +170,4 @@ export function Dashboard() {
     </>
   );
 }
+export default Dashboard;

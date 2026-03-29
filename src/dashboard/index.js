@@ -5,6 +5,7 @@ import { ModeSelector } from '../../components/mode/ModeSelector';
 import { PriceCard } from '../../components/dashboard/PriceCard';
 import { Chart } from '../../components/dashboard/Chart';
 import { TransactionForm } from '../../components/dashboard/TransactionForm';
+import Chart from '../../components/dashboard/Chart';
 
 const Container = styled.div`
   max-width: 1400px;
@@ -81,14 +82,14 @@ export function Dashboard() {
   }, [mode]);
   
   return (
-    <Container>
+    <><Chart /><Container>
       <Header>
         <Title>
           {mode === 'crypto' ? '💰 Cripto Dashboard' : '📊 Finanças Pessoais'}
         </Title>
         <ModeSelector />
       </Header>
-      
+
       {loading ? (
         <p>Carregando...</p>
       ) : (
@@ -100,23 +101,20 @@ export function Dashboard() {
                 symbol={asset.symbol}
                 name={asset.name}
                 price={asset.price}
-                change={asset.change}
-              />
+                change={asset.change} />
             ))}
           </Grid>
-          
+
           <TwoColumns>
-            <Chart 
-              data={chartData} 
-              title={mode === 'crypto' ? 'Preço (R$)' : 'Cotação Histórica'}
-            />
-            <TransactionForm 
+            <Chart
+              data={chartData}
+              title={mode === 'crypto' ? 'Preço (R$)' : 'Cotação Histórica'} />
+            <TransactionForm
               mode={mode}
-              onAddTransaction={(tx) => setTransactions([...transactions, tx])}
-            />
+              onAddTransaction={(tx) => setTransactions([...transactions, tx])} />
           </TwoColumns>
         </>
       )}
-    </Container>
+    </Container></>
   );
 }
