@@ -1,6 +1,7 @@
 :root {
-  /* Light mode (default) */
+  /* Light mode */
   --bg-primary: #ffffff;
+  --bg-primary-rgb: 255, 255, 255;
   --bg-secondary: #f3f4f6;
   --text-primary: #111827;
   --text-secondary: #6b7280;
@@ -13,6 +14,7 @@
 
 [data-theme="dark"] {
   --bg-primary: #111827;
+  --bg-primary-rgb: 17, 24, 39;
   --bg-secondary: #1f2937;
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
@@ -21,17 +23,4 @@
   --accent: #60a5fa;
   --success: #34d399;
   --danger: #f87171;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
 }
